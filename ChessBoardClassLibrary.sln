@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoardClassLibrary", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoardConsoleApp", "ChessBoardConsoleApp\ChessBoardConsoleApp.csproj", "{15E2D9C0-5FDC-4F64-AE27-E7260F80A469}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoardGUIApp", "ChessBoardGUIApp\ChessBoardGUIApp.csproj", "{30CF59DE-372B-4E20-846F-C810B458447F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{15E2D9C0-5FDC-4F64-AE27-E7260F80A469}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15E2D9C0-5FDC-4F64-AE27-E7260F80A469}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15E2D9C0-5FDC-4F64-AE27-E7260F80A469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30CF59DE-372B-4E20-846F-C810B458447F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30CF59DE-372B-4E20-846F-C810B458447F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30CF59DE-372B-4E20-846F-C810B458447F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30CF59DE-372B-4E20-846F-C810B458447F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

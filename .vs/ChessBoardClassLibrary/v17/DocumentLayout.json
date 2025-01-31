@@ -54,8 +54,7 @@
               "RelativeToolTip": "ChessBoardConsoleApp\\Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T18:13:00.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T18:13:00.604Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "ChessBoardClassLibrary\\Services\\BusinessLogicLayer\\BoardLogic.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T19:19:29.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T19:19:29.284Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "ChessBoardClassLibrary\\Moedls\\BoardMoedl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T19:19:08.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T19:19:08.222Z"
             },
             {
               "$type": "Document",
@@ -93,8 +90,7 @@
               "RelativeToolTip": "ChessBoardClassLibrary\\Moedls\\CellModel.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T19:18:49.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T19:18:49.906Z"
             }
           ]
         }

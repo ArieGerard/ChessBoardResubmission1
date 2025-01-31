@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{15E2D9C0-5FDC-4F64-AE27-E7260F80A469}|ChessBoardConsoleApp\\ChessBoardConsoleApp.csproj|c:\\users\\jpang\\source\\repos\\cst-250\\chessboardclasslibrary\\chessboardconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{15E2D9C0-5FDC-4F64-AE27-E7260F80A469}|ChessBoardConsoleApp\\ChessBoardConsoleApp.csproj|solutionrelative:chessboardconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FA937DAD-CB4A-4666-9257-55E7042CA888}|ChessBoardClassLibrary\\ChessBoardClassLibrary.csproj|c:\\users\\jpang\\source\\repos\\cst-250\\chessboardclasslibrary\\chessboardclasslibrary\\services\\businesslogiclayer\\boardlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA937DAD-CB4A-4666-9257-55E7042CA888}|ChessBoardClassLibrary\\ChessBoardClassLibrary.csproj|solutionrelative:chessboardclasslibrary\\services\\businesslogiclayer\\boardlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,38 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "ChessBoardConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardConsoleApp\\Program.cs",
+              "RelativeToolTip": "ChessBoardConsoleApp\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T18:13:00.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BoardLogic.cs",
               "DocumentMoniker": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardClassLibrary\\Services\\BusinessLogicLayer\\BoardLogic.cs",
               "RelativeDocumentMoniker": "ChessBoardClassLibrary\\Services\\BusinessLogicLayer\\BoardLogic.cs",
               "ToolTip": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardClassLibrary\\Services\\BusinessLogicLayer\\BoardLogic.cs",
               "RelativeToolTip": "ChessBoardClassLibrary\\Services\\BusinessLogicLayer\\BoardLogic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T19:19:29.284Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BoardMoedl.cs",
               "DocumentMoniker": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardClassLibrary\\Moedls\\BoardMoedl.cs",
               "RelativeDocumentMoniker": "ChessBoardClassLibrary\\Moedls\\BoardMoedl.cs",
               "ToolTip": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardClassLibrary\\Moedls\\BoardMoedl.cs",
               "RelativeToolTip": "ChessBoardClassLibrary\\Moedls\\BoardMoedl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T19:19:08.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CellModel.cs",
               "DocumentMoniker": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardClassLibrary\\Moedls\\CellModel.cs",
               "RelativeDocumentMoniker": "ChessBoardClassLibrary\\Moedls\\CellModel.cs",
               "ToolTip": "C:\\Users\\jpang\\source\\repos\\CST-250\\ChessBoardClassLibrary\\ChessBoardClassLibrary\\Moedls\\CellModel.cs",
               "RelativeToolTip": "ChessBoardClassLibrary\\Moedls\\CellModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-22T19:18:49.906Z",
               "EditorCaption": ""

@@ -93,21 +93,21 @@ namespace ChessBoardClassLibrary.Services.BusinessLogicLayer
                     for (int i = 0; i < rookRowMoves.Length; i++)
                     {
                         // for each direction, find new position by adding rookRowMoves[i] to current on to find the position
-                        int multiRow = currentCell.Row + rookRowMoves[i];
-                        int multiCol = currentCell.Column + rookColMoves[i];
+                        int nextRow = currentCell.Row + rookRowMoves[i];
+                        int nextCol = currentCell.Column + rookColMoves[i];
                         //as long as the new move is on board
-                        while (IsOnBoard(board, multiRow, multiCol))
+                        while (IsOnBoard(board, nextRow, nextCol))
                         {
-                            board.Grid[multiRow, multiCol].IsLegalNextMove = true;
+                            board.Grid[nextRow, nextCol].IsLegalNextMove = true;
 
                             // is new place have a piece, stop
-                            if (!string.IsNullOrEmpty(board.Grid[multiRow, multiCol].PieceOccupyingCell))
+                            if (!string.IsNullOrEmpty(board.Grid[nextRow, nextCol].PieceOccupyingCell))
                             {
                                 break;
                             }
                             // if next place is not occupied, update the new row and col and rook can move further from there
-                            multiRow += rookRowMoves[i];
-                            multiCol += rookColMoves[i];
+                            nextRow += rookRowMoves[i];
+                            nextCol += rookColMoves[i];
                         }
                     }
                     break;
@@ -120,21 +120,68 @@ namespace ChessBoardClassLibrary.Services.BusinessLogicLayer
 
                     for (int i = 0; i < bishopRowMoves.Length; i++)
                     {
-                        int newRow = currentCell.Row + bishopRowMoves[i];
-                        int newCol = currentCell.Column + bishopColMoves[i];
+                        int nextRow = currentCell.Row + bishopRowMoves[i];
+                        int nextCol = currentCell.Column + bishopColMoves[i];
 
-                        while (IsOnBoard(board, newRow, newCol))
+                        while (IsOnBoard(board, nextRow, nextCol))
                         {
-                            board.Grid[newRow, newCol].IsLegalNextMove = true;
+                            board.Grid[nextRow, nextCol].IsLegalNextMove = true;
 
-                            if (!string.IsNullOrEmpty(board.Grid[newRow, newCol].PieceOccupyingCell))
+                            if (!string.IsNullOrEmpty(board.Grid[nextRow, nextCol].PieceOccupyingCell))
                             {
                                 break;
                             }
 
-                            newRow += bishopRowMoves[i];
-                            newCol += bishopColMoves[i];
+                            nextRow += bishopRowMoves[i];
+                            nextCol += bishopColMoves[i];
                         }
+                    }
+                    break;
+
+                case "queen":
+                    board.Grid[currentCell.Row, currentCell.Column].PieceOccupyingCell = "Q";
+
+                    int[] queenRowMoves = { 1, -1, 0, 0, 1, 1, -1, -1 };
+                    int[] queenColMoves = { 0, 0, 1, -1, 1, -1, 1, -1 };
+
+                    for (int i = 0;i < queenRowMoves.Length; i++)
+                    {
+                        int nextRow = currentCell.Row + queenRowMoves[i];
+                        int nextCol = currentCell.Column + queenColMoves[i];
+
+                        while (IsOnBoard(board, nextRow, nextCol))
+                        {
+                            board.Grid[nextRow, nextCol].IsLegalNextMove = true;
+
+                            if (!string.IsNullOrEmpty(board.Grid[nextRow, nextCol].PieceOccupyingCell))
+                            {
+                                break;
+                            }
+
+                            nextRow += queenRowMoves[i];
+                            nextCol += queenColMoves[i];
+                        }
+                    }
+                    break;
+
+                case "king":
+                    board.Grid[currentCell.Row, currentCell.Column].PieceOccupyingCell = "K";
+
+                    int[] kingRowMoves = { 1, -1, 0, 0, 1, 1, -1, -1 };
+                    int[] kingColMoves = { 0, 0, 1, -1, 1, -1, 1, -1 };
+
+                    for (int i = 0; i < kingRowMoves.Length; i++)
+                    {
+                        int nextRow = currentCell.Row + kingRowMoves[i];
+                        int nextCol = currentCell.Column + kingColMoves[i];
+
+                            board.Grid[nextRow, nextCol].IsLegalNextMove = true;
+
+                        if (IsOnBoard(board, nextRow, nextCol))
+                        {
+                            board.Grid[nextRow, nextCol].IsLegalNextMove = true;
+                        }
+
                     }
                     break;
 

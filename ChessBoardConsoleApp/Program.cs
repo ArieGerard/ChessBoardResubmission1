@@ -60,6 +60,7 @@ class Healper
             {
                 // get the current cell from the grid
                 CellModel cell = board.Grid[row, col];
+                
                 // Check if the current cell is a legal move
                 if (cell.IsLegalNextMove)
                 {
@@ -78,9 +79,7 @@ class Healper
                     Console.Write(" . ");
                 }
             }
-            //Start a new line after every row
-            Console.WriteLine();
-        } // end of outter for loop
+        }
     } // end of PrintBoard method
 
     public static Tuple<int, int> GetRowAndCol()

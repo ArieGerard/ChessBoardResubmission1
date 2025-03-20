@@ -1,119 +1,164 @@
-using ChessBoardClassLibrary.Moedls;
+using ChessBoardClassLibrary.ModelsLibrary;
 using ChessBoardClassLibrary.Services.BusinessLogicLayer;
 
 namespace ChessBoardGUIApp
 {
     public partial class FrmChessBoard : Form
     {
-        // Class Level variables
-        BoardMoedl board = new BoardMoedl(8);
+        BoardModel board = new BoardModel(8);
         BoardLogic storeLogic = new BoardLogic();
-        Button[,] buttons = new Button[8,8];
+        Button[,] buttons = new Button[8, 8];
 
         public FrmChessBoard()
         {
+            //Calls the initalize components methods to 
             InitializeComponent();
             SetUpButtons();
         }
 
         /// <summary>
-        /// Populate the panel control with buttons
+        /// Method to set up the buttons. 
         /// </summary>
+
         private void SetUpButtons()
         {
-            // Calculate the size of each button based on the panel
-            // width and number of buttons needed
+
             int buttonSize = pnlChessBoard.Width / board.Size;
             pnlChessBoard.Height = pnlChessBoard.Width;
-            // Use nested for loops to loop through the boards Grid
+
             for (int row = 0; row < board.Size; row++)
             {
                 for (int col = 0; col < board.Size; col++)
                 {
-                    // Set up each individual button
-                    // Create a new button in the 2D array
+                    //instantiating the buttons to the row and columns 
+
                     buttons[row, col] = new Button();
-                    // Set the size for the button
                     buttons[row, col].Width = buttonSize;
                     buttons[row, col].Height = buttonSize;
-                    // Set the location of the button
-                    // using the left and top sides
+
                     buttons[row, col].Left = row * buttonSize;
                     buttons[row, col].Top = col * buttonSize;
-                    // Attach a click event handler to the button
                     buttons[row, col].Click += BtnSquareClickEH;
-                    // Store the location of the button in the tag property using a point object
                     buttons[row, col].Tag = new Point(row, col);
-                    // Set the tect for the button
                     buttons[row, col].Text = $"{row}, {col}";
-                    // Add the button to the panels controls
                     pnlChessBoard.Controls.Add(buttons[row, col]);
                 }
             }
-        }// End of SetUpButtons
-
+        }
         /// <summary>
-        /// Click Event Hanlder fot the chess board buttons
+        /// method to tell the user what cell they clicked on. Didnt impliment outprint message because it hinders playability. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
         private void BtnSquareClickEH(object? sender, EventArgs e)
         {
-            // Declare and initialize
+
             Button button = (Button)sender;
             Point point = (Point)button.Tag;
             int row = point.X;
-            int col = point.Y;  
+            int col = point.Y;
             string piece = cmbChessPieces.Text;
 
-            // Show the user their choice
-            MessageBox.Show($"You clicked on row {row} and column {col}");
-            // Send the board, current cell, and piece to ther business logic layer
+
             board = storeLogic.MarkLegalMoves(board, board.Grid[row, col], piece);
-            // Update the buttons
-            UpDateButtons();
+
+            UpdateButtons();
         }
 
         /// <summary>
-        /// Update the text for each button based on the board
+        /// Method to update the buttons 
         /// </summary>
-        private void UpDateButtons()
+        private void UpdateButtons()
         {
-
-            // Set up a dictionary to get the names of the chess pieces
             Dictionary<string, string> pieceMap = new Dictionary<string, string>
-            {
-                {"N", "Knight" },
-                {"R", "Rook" },
-                {"B", "Bishop" },
-                {"Q", "Queen" },
-                {"K", "King" }
-            };
+    {
+        {"N", "Knight" },
+        {"R", "Rook" },
+        {"B", "Bishop" },
+        {"Q", "Queen" },
+        {"K", "King" }
+    };
 
-            // Loop through each cell in the grid to update the corresponding button
-            for (int row = 0; row < board.Size; row++) 
+            string selectedTheme;
+            Color legalMoveColor;
+
+            // Validate cmbColor.SelectedItem and handle potential null or invalid values
+            if (cmbColor.SelectedItem == null || string.IsNullOrWhiteSpace(cmbColor.SelectedItem.ToString()))
             {
-                for (int col = 0; col < board.Size; col++) 
+                // Default to a neutral theme if no selection is made
+                selectedTheme = "Default";
+            }
+            else
+            {
+                selectedTheme = cmbColor.SelectedItem.ToString();
+            }
+
+            // Switch case to determine the legal move colors based on the selected theme
+            switch (selectedTheme)
+            {
+                case "Warm":
+                    legalMoveColor = Color.Orange;
+                    break;
+                case "Cool":
+                    legalMoveColor = Color.Blue;
+                    break;
+                case "Forest":
+                    legalMoveColor = Color.Green;
+                    break;
+                default:
+                    legalMoveColor = Color.Gray; // Default color
+                    break;
+            }
+
+            // Loop to mark legal next moves
+            for (int row = 0; row < board.Size; row++)
+            {
+                for (int col = 0; col < board.Size; col++)
                 {
                     if (board.Grid[row, col].IsLegalNextMove)
                     {
-                        // Set the text to show a legal move
+                        buttons[row, col].BackColor = legalMoveColor;
                         buttons[row, col].Text = "Legal Move";
                     }
-                    else if (board.Grid[row, col].PieceOccupyingCell != "")
+                    else if (!string.IsNullOrEmpty(board.Grid[row, col].PieceOccupyingCell))
                     {
-                        // Use the dictionary to get the name of the chess piece
-                        string piece = pieceMap[board.Grid[row, col].PieceOccupyingCell];
-                        // Update the text for the button
-                        buttons[row, col].Text = piece;
+                        string piece;
+                        if (pieceMap.TryGetValue(board.Grid[row, col].PieceOccupyingCell, out piece))
+                        {
+                            buttons[row, col].BackColor = DefaultBackColor;
+                            buttons[row, col].Text = piece;
+                        }
+                        else
+                        {
+                            // Handle invalid piece code gracefully
+                            buttons[row, col].BackColor = DefaultBackColor;
+                            buttons[row, col].Text = "Unknown Piece";
+                        }
                     }
                     else
                     {
-                        // Clear the text for any other buttons
+                        buttons[row, col].BackColor = DefaultBackColor;
                         buttons[row, col].Text = "";
                     }
                 }
             }
-        } // End of UpdateButtons method
+        }
+
+
+        private void FrmChessBoard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbChessPieces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

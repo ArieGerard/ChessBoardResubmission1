@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChessBoardConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37300d2177539f366722bb0e68a00fd039f09713")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bbfccf3989cc95dbad06ac565a43f244fef964b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChessBoardConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChessBoardConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

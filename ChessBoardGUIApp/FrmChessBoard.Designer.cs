@@ -1,16 +1,21 @@
-﻿namespace ChessBoardGUIApp
+﻿/*
+*Arie Gerard 
+*Activity 2
+*Bill Hughes
+*02/09/2025
+*
+ */
+namespace ChessBoardGUIApp
 {
     partial class FrmChessBoard
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
+      
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+       /// <summary>
+       /// Method to dispose of unused assets. 
+       /// </summary>
+       /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -33,54 +38,73 @@
             label2 = new Label();
             pnlChessBoard = new Panel();
             cmbChessPieces = new ComboBox();
+            cmbColor = new ComboBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 9);
+            label1.Location = new Point(26, 7);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(567, 25);
+            label1.Size = new Size(216, 40);
             label1.TabIndex = 0;
-            label1.Text = "Select a chess piece and its location on the board and see legal moves";
+            label1.Text = "Select a chess peice and place. \r\n\r\n";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(634, 9);
+            label2.Location = new Point(507, 7);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(69, 25);
+            label2.Size = new Size(100, 20);
             label2.TabIndex = 1;
-            label2.Text = "Pieces: ";
+            label2.Text = "Choose Piece:";
             // 
             // pnlChessBoard
             // 
-            pnlChessBoard.Location = new Point(12, 37);
+            pnlChessBoard.Location = new Point(10, 30);
+            pnlChessBoard.Margin = new Padding(2);
             pnlChessBoard.Name = "pnlChessBoard";
-            pnlChessBoard.Size = new Size(500, 500);
+            pnlChessBoard.Size = new Size(400, 400);
             pnlChessBoard.TabIndex = 2;
             // 
             // cmbChessPieces
             // 
             cmbChessPieces.FormattingEnabled = true;
             cmbChessPieces.Items.AddRange(new object[] { "King", "Queen", "Bishop", "Knight", "Rook" });
-            cmbChessPieces.Location = new Point(634, 52);
+            cmbChessPieces.Location = new Point(507, 42);
+            cmbChessPieces.Margin = new Padding(2);
             cmbChessPieces.Name = "cmbChessPieces";
-            cmbChessPieces.Size = new Size(182, 33);
+            cmbChessPieces.Size = new Size(146, 28);
             cmbChessPieces.TabIndex = 3;
+            cmbChessPieces.SelectedIndexChanged += cmbChessPieces_SelectedIndexChanged;
+            // 
+            // cmbColor
+            // 
+            cmbColor.FormattingEnabled = true;
+            cmbColor.Items.AddRange(new object[] { "Warm", "Cool ", "Forest" });
+            cmbColor.Location = new Point(507, 95);
+            cmbColor.Name = "cmbColor";
+            cmbColor.Size = new Size(151, 28);
+            cmbColor.TabIndex = 4;
             // 
             // FrmChessBoard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(864, 572);
+            ClientSize = new Size(691, 458);
+            Controls.Add(cmbColor);
             Controls.Add(cmbChessPieces);
             Controls.Add(pnlChessBoard);
             Controls.Add(label2);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(2);
             Name = "FrmChessBoard";
             Text = "Chess Board";
+            Load += FrmChessBoard_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -91,5 +115,6 @@
         private Label label2;
         private Panel pnlChessBoard;
         private ComboBox cmbChessPieces;
+        private ComboBox cmbColor;
     }
 }

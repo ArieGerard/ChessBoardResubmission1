@@ -17,6 +17,7 @@ namespace ChessBoardClassLibrary.Services.BusinessLogicLayer
 {
     public class BoardLogic
     {
+        int arie = 0;
        /// <summary>
        /// method for resetting the board, as well as using the BoardModel for a parameter. 
        /// </summary>
